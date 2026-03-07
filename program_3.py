@@ -1,23 +1,38 @@
-# Program #3: US_Population
+# Population program
+# Written by Wesley Greer on 3/6/2026
 def main():
-    # Have the user input (using a loop) various information that contains three pieces of data: 
-    # year, name of state, and population.  
-    # Store all of this information in a list of lists.  For example it might be stored like this:
-    
-    # [[2010, "Maine", 1987435], [2010,"Minnesota",6873202], [2011, "Iowa", 3421988]]
-    all_entered_values = []
+    print('''This program allows you to enter population data for different states for different years.
+    When you are done entering population data, you can enter a year
+    and it will display the total population for that year according to the data you entered.''')
 
-    # Now have the user enter a year. 
-    
-    # The program will add the populations from all states in the list of list for that year only.
-    # Pass the list and year to the sum_population_for_year
+# Allow the user to input population data and add it to a list
+    population_data = []
 
-def sum_population_for_year(all_entered_values, year_to_sum):
-    # Loop through and sum the populations for the appropriate year. 
-    # e.g. for the list on line 7 the total would be 8,860,637 if the user enterd 2010 for the year to sum,
-    # or 3,421,988 if they enterd 2011 for the year to sum.
+    i = True
+    while i == True:
+        year = int(input("Enter year: "))
+        state = input("Enter state name: ")
+        population = int(input("Enter population: "))
+        population_data.append([year, state, population])
+        more_entries = input("Would you like to add another entry? (y=yes) ")
+        if more_entries == 'y':
+            pass
+        else:
+            i = False
 
-    # print the totalled population
+    def sum_population_for_year():
+        total_population = 0
+        for entry in population_data:
+            if entry[0] == y:
+                total_population += entry[2]
+            else: pass
+        print('The total population for', y, 'is', total_population)
+
+    # Now have the user enter a year.
+    y = int(input('Enter a year to find the sum of the population for that year: '))
+    sum_population_for_year()
+
+
 
 
 # Call the main function.
